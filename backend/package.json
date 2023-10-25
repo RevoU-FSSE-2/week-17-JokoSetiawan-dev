@@ -1,0 +1,46 @@
+{
+  "name": "week-15-jokosetiawan-dev",
+  "version": "1.0.0",
+  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/A8ztcAuX)",
+  "main": "dist/index.js",
+  "scripts": {
+    "start:prod": "node dist/app.js",
+    "dev": "nodemon src/app.ts",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "18"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/cors": "^2.8.14",
+    "@types/helmet": "^4.0.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "firebase-admin": "^11.11.0",
+    "firebase-functions": "^4.4.1",
+    "helmet": "^7.0.0",
+    "helmet-csp": "^3.4.0",
+    "mysql2": "^3.6.1",
+    "typescript": "^5.2.2"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.3",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.18",
+    "firebase-functions-test": "^3.1.0",
+    "nodemon": "^3.0.1",
+    "ts-node": "^10.9.1"
+  },
+  "private": true
+}

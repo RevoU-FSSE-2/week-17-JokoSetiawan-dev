@@ -1,5 +1,5 @@
+const functions = require('firebase-functions');
 import express, { Express, Request, Response, NextFunction } from "express";
-import functions  from "firebase-functions";
 const routes = express.Router();
 import "dotenv/config";
 import bodyParser from "body-parser";
@@ -50,7 +50,7 @@ app.use(bodyParser.json());
 
 app.use((req: Request, res: Response, next: NextFunction) => {
   const allowedOrigins: string[] = [
-    'https://week-17-jokosetiawan.web.app/',
+    'https://week-17-jokosetiawanfe.web.app/',
     'https://clinetx-week15.netlify.app',
   ];
   const origin: string | undefined = req.headers.origin as string;
@@ -59,7 +59,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   if (allowedOrigins.includes(origin)) {
     res.header('Access-Control-Allow-Origin', origin);
 
-    if (origin === 'https://week-17-jokosetiawan.web.app/') {
+    if (origin === 'https://week-17-jokosetiawanfe.web.app/') {
       res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
     } else if (origin === 'https://clinetx-week15.netlify.app') {
       res.header('Access-Control-Allow-Methods', 'GET, POST');
@@ -75,9 +75,8 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 app.use(transactionRoutes);
 
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
+// app.listen(port, () => {
+//   console.log(`Server running on port ${port}`);
+// });
 
-const week17joko = functions.https.onRequest(app);
-export default week17joko;
+export const jokosetiawan = functions.https.onRequest(app)
